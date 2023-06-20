@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { Button, Card } from "ui";
+import { Button, Card } from "../../../../packages/ui/src/index";
 
 const CARD_CONTENT = [
   {
@@ -34,7 +34,9 @@ export default function Home() {
           </span>
         </h1>
         <div className="mx-auto mt-5 max-w-xl sm:flex sm:justify-center md:mt-8">
-          <Button />
+          <Button variant="link" size="xl">
+            Test Button
+          </Button>
         </div>
 
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 place-content-evenly">
