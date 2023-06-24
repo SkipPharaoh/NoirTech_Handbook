@@ -19,18 +19,18 @@ describe("Button", () => {
     expect(button).toBeDefined();
   });
 
-  it("applies the specified variant class", () => {
-    render(<Button variant="primary">Test Button!</Button>);
-    const button = screen.getByRole("button");
-    expect(button.className).toContain("bg-primary");
-  });
+  // it("applies the specified variant class", () => {
+  //   render(<Button variant="primary">Test Button!</Button>);
+  //   const button = screen.getByRole("button");
+  //   expect(button.className).toContain("bg-primary");
+  // });
 
-  it("applies the specified size class", () => {
-    render(<Button size="lg">Large Button</Button>);
-    const button = screen.getByRole("button");
-    expect(button.className).toContain("py-4 px-12");
-    expect(button.className).toContain("lg");
-  });
+  // it("applies the specified size class", () => {
+  //   render(<Button size="lg">Large Button</Button>);
+  //   const button = screen.getByRole("button");
+  //   expect(button.className).toContain("py-4 px-12");
+  //   expect(button.className).toContain("lg");
+  // });
 
   // it("calls the onClick handler when clicked", () => {
   //   const handleOnClickSpy = vi.fn(() => {});

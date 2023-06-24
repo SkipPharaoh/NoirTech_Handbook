@@ -1,5 +1,6 @@
 const basicNextJSConfig = {
   reactStrictMode: true,
+  transpilePackages: ["ui"],
 };
 
 const withNextra = require("nextra")({
