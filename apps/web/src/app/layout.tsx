@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 // include styles from the ui package
-import "ui/styles.css";
+import "@noirtribe/ui/styles.css";
 
 export default function RootLayout({
   children,

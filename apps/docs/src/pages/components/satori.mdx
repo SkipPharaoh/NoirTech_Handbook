@@ -3,7 +3,7 @@
 Satori (悟り) is a Japanese Buddhist term for awakening, "comprehension; understanding".
 
 import { Tab, Tabs } from "nextra-theme-docs";
-import { Button } from "ui";
+import { Button } from "@noirtribe/ui";
 
 `const propKeys = Object.keys(Button.propTypes);`
 
@@ -19,7 +19,9 @@ import { Button } from "ui";
       understand under the hood for efficient implementation.
     </Tab>
   </Tabs>
-  <Button variant="default" size="xl" onClick={() => alert("Button Clicked")}>
-    Test
-  </Button>
+  <div className="flex justify-center">
+    <Button variant="default" size="xl" onClick={() => alert("Button Clicked")}>
+      Test
+    </Button>
+  </div>
 </div>

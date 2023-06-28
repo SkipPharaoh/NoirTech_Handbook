@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { Button, Card } from "../../../../packages/ui/src/index";
+import { Button, Card } from "../../../../packages/@noirtribe-ui/src/index";
 
 const CARD_CONTENT = [
   {
