@@ -3,7 +3,7 @@
 Satori (悟り) is a Japanese Buddhist term for awakening, "comprehension; understanding".
 
 import { Tab, Tabs } from "nextra-theme-docs";
-import { Button } from "@noirtribe/ui";
+import { Button, Card } from "@noirtribe/ui";
 
 `const propKeys = Object.keys(Button.propTypes);`
 
@@ -19,9 +19,39 @@ import { Button } from "@noirtribe/ui";
       understand under the hood for efficient implementation.
     </Tab>
   </Tabs>
-  <div className="flex justify-center">
-    <Button variant="default" size="xl" onClick={() => alert("Button Clicked")}>
-      Test
-    </Button>
+  <div>
+    <div className="flex justify-center">
+      <Button
+        className="my-10"
+        variant="default"
+        size="xl"
+        onClick={() => alert("Button Clicked")}
+      >
+        Test
+      </Button>
+    </div>
+    <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 place-content-evenly">
+      <Card
+        title="Caching Tasks"
+        cta="Read More"
+        href="https://turbo.build/repo/docs/core-concepts/caching"
+        backGroundColor="white"
+        titleColor="secondary"
+      />
+      <Card
+        title="Running Tasks"
+        cta="Read More"
+        href="https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks"
+        backGroundColor="zinc"
+        titleColor="white"
+      />
+      <Card
+        title="Configuration Options"
+        cta="Read More"
+        href="https://turbo.build/repo/docs/reference/configuration"
+        backGroundColor="secondary"
+        titleColor="primary"
+      />
+    </div>
   </div>
 </div>

@@ -41,7 +41,13 @@ export default function Home() {
 
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 place-content-evenly">
           {CARD_CONTENT.map((card) => (
-            <Card key={card.title} {...card} />
+            <Card
+              key={card.title}
+              {...card}
+              backGroundColor="zinc"
+              titleColor="white"
+              ctaColor="primary"
+            />
           ))}
         </div>
       </main>
