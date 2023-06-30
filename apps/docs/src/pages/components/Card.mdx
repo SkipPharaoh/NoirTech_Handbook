@@ -1,0 +1,39 @@
+# Card
+
+import { Tab, Tabs } from "nextra-theme-docs";
+import { Card } from "@noirtribe/ui";
+import {
+  DisplayComponent,
+  PropTable,
+  PropData,
+} from "../../../../../packages/@noirtribe-ui/src/lib/docs/utils";
+
+`type ButtonProps = ComponentProps<typeof Button>`
+
+<div className="h-3/5">
+  <DisplayComponent>
+    <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 place-content-evenly">
+      <Card
+        title="Caching Tasks"
+        cta="Read More"
+        href="https://turbo.build/repo/docs/core-concepts/caching"
+        backGroundColor="white"
+        titleColor="secondary"
+      />
+      <Card
+        title="Running Tasks"
+        cta="Read More"
+        href="https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks"
+        backGroundColor="zinc"
+        titleColor="white"
+      />
+      <Card
+        title="Configuration Options"
+        cta="Read More"
+        href="https://turbo.build/repo/docs/reference/configuration"
+        backGroundColor="secondary"
+        titleColor="primary"
+      />
+    </div>
+  </DisplayComponent>
+</div>
