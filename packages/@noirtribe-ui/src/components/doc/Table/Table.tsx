@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import { forwardRef } from "react";
 import { cn } from "../../../lib/styling/utils";
 import {
   TableProps,
@@ -95,7 +95,7 @@ const TableCaption = forwardRef<HTMLTableSectionElement, TableCaptionProps>(
   ({ className, ...props }, ref) => (
     <caption
       ref={ref}
-      className={cn("mt-4 text-sm text-muted-foreground", className)}
+      className={cn("my-4 text-sm text-muted-foreground", className)}
       {...props}
     />
   )
