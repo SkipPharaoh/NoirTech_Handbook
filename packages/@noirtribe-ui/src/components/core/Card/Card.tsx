@@ -1,6 +1,6 @@
 import { cva } from "class-variance-authority";
 import { forwardRef } from "react";
-import { cn, pick } from "../../../lib/styling/utils";
+import { cn } from "../../../lib/styling/utils";
 import { CardProps } from "./CardProps";
 
 export const cardVariants = cva(
@@ -23,20 +23,6 @@ export const cardVariants = cva(
         secondary: "text-secondary",
         tertiary: "text-tertiary",
       },
-      backGroundColor: {
-        zinc: "bg-zinc-900",
-        white: "bg-white",
-        primary: "bg-primary",
-        secondary: "bg-secondary",
-        tertiary: "bg-tertiary",
-      },
-      titleColor: {
-        white: "text-white",
-        black: "text-black",
-        primary: "text-primary",
-        secondary: "text-secondary",
-        tertiary: "text-tertiary",
-      },
     },
     defaultVariants: {
       borderColor: "gradient",
@@ -44,6 +30,36 @@ export const cardVariants = cva(
     },
   }
 );
+
+export const cardBackGroundColorVariants = cva("p-4 h-full", {
+  variants: {
+    backGroundColor: {
+      zinc: "bg-zinc-900",
+      white: "bg-white",
+      primary: "bg-primary",
+      secondary: "bg-secondary",
+      tertiary: "bg-tertiary",
+    },
+  },
+  defaultVariants: {
+    backGroundColor: "zinc",
+  },
+});
+
+export const cardTitleTextColorVariants = cva("inline-bloack text-xl", {
+  variants: {
+    titleColor: {
+      white: "text-white",
+      black: "text-black",
+      primary: "text-primary",
+      secondary: "text-secondary",
+      tertiary: "text-tertiary",
+    },
+  },
+  defaultVariants: {
+    titleColor: "tertiary",
+  },
+});
 
 export default forwardRef<HTMLAnchorElement, CardProps>(function Card(
   {
@@ -59,9 +75,6 @@ export default forwardRef<HTMLAnchorElement, CardProps>(function Card(
   },
   ref
 ) {
-  const bgColor = pick(cardVariants({ backGroundColor }), cardVariants({}));
-  const titleTextColor = pick(cardVariants({ titleColor }), cardVariants({}));
-
   return (
     <a
       className={cn(cardVariants({ borderColor, ctaColor }))}
@@ -71,9 +84,11 @@ export default forwardRef<HTMLAnchorElement, CardProps>(function Card(
       ref={ref}
       {...props}
     >
-      <div className={`p-4 ${bgColor} h-full`}>
-        <p className={`inline-block text-xl ${titleTextColor}`}>{title}</p>
-        <div className="text-xs mt-4 group-hover:underline">{cta} →</div>
+      <div className={cn(cardBackGroundColorVariants({ backGroundColor }))}>
+        <p className={cn(cardTitleTextColorVariants({ titleColor }))}>
+          {title}
+        </p>
+        <div className={cn("text-xs mt-4 group-hover:underline")}>{cta} →</div>
       </div>
     </a>
   );

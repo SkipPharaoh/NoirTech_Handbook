@@ -49,6 +49,7 @@ export default forwardRef<HTMLButtonElement, ButtonProps>(function Button(
       className={cn(buttonVariants({ variant, size, className }))}
       id="Button"
       ref={ref}
+      onClick={onClick}
       {...props}
     >
       {children}
