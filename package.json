@@ -7,13 +7,17 @@
     "clean": "turbo clean",
     "daemon-clean": "turbo daemon clean",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "vitest": "cd packages/ui && pnpm test"
+    "vitest": "cd packages/ui && pnpm test",
+    "create-component": "tsx scripts/create-component.ts"
   },
   "devDependencies": {
+    "@types/inquirer": "^9.0.3",
     "eslint": "^7.32.0",
     "eslint-config-custom": "workspace:*",
+    "inquirer": "^9.2.7",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.11",
+    "tsx": "^3.12.7",
     "turbo": "latest"
   },
   "packageManager": "pnpm@7.15.0"
