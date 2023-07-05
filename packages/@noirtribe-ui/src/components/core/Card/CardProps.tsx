@@ -1,20 +1,29 @@
 import { VariantProps } from "class-variance-authority";
 import {
-  cardBackGroundColorVariants,
-  cardTitleTextColorVariants,
+  cardDescriptionVariants,
+  cardFooterVariants,
+  cardTitleVariants,
   cardVariants,
 } from "./Card";
 
-export interface CardTitleTextProps
-  extends VariantProps<typeof cardTitleTextColorVariants> {}
-
-export interface CardBackGroundProps
-  extends CardTitleTextProps,
-    VariantProps<typeof cardBackGroundColorVariants> {}
-
 export interface CardProps
-  extends CardBackGroundProps,
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof cardVariants> {}
+
+export interface CardHeaderProps extends React.HTMLAttributes<HTMLDivElement> {}
+
+export interface CardTitleProps
+  extends React.HTMLAttributes<HTMLHeadingElement>,
+    VariantProps<typeof cardTitleVariants> {}
+
+export interface CardDescriptionProps
+  extends React.HTMLAttributes<HTMLParagraphElement>,
+    VariantProps<typeof cardDescriptionVariants> {}
+
+export interface CardContentProps
+  extends React.HTMLAttributes<HTMLDivElement> {}
+
+export interface CardFooterProps
+  extends React.HTMLAttributes<HTMLDivElement>,
     React.AnchorHTMLAttributes<HTMLAnchorElement>,
-    VariantProps<typeof cardVariants> {
-  cta: string;
-}
+    VariantProps<typeof cardFooterVariants> {}

@@ -1,7 +1,14 @@
 # Card
 
 import { Tab, Tabs } from "nextra-theme-docs";
-import { Card } from "@noirtribe/ui";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@noirtribe/ui";
 import {
   PropData,
   CardData,
@@ -9,12 +16,28 @@ import {
 import { DocsComponentLayout } from "../../../../../packages/@noirtribe-ui/src/components/doc/DocsComponentLayout/index";
 
 `type CardProps = ComponentProps<typeof Card>`
+`type CardHeaderProps = ComponentProps<typeof CardHeader>`
+`type CardTitleProps = ComponentProps<typeof CardTitle>`
+`type CardDescriptionProps = ComponentProps<typeof CardDescription>`
+`type CardContentProps = ComponentProps<typeof CardContent>`
+`type CardFooterProps = ComponentProps<typeof CardFooter>`
 
 <div className="h-3/5">
   <DocsComponentLayout propInfo={PropData}>
     <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 place-content-evenly">
       {CardData.map((card) => (
-        <Card key={card.title} {...card} />
+        <Card key={card.title} backGroundColor={card.backGroundColor}>
+          <CardHeader>
+            <CardTitle titleColor={card.titleColor}>{card.title}</CardTitle>
+            <CardDescription>Card Description</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p>Card Content</p>
+          </CardContent>
+          <CardFooter href={card.href} className="hover:underline">
+            {card.cta}
+          </CardFooter>
+        </Card>
       ))}
     </div>
   </DocsComponentLayout>

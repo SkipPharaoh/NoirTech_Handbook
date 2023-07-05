@@ -1,22 +1,47 @@
 import { cva } from "class-variance-authority";
 import { forwardRef } from "react";
 import { cn } from "../../../lib/styling/utils";
-import { CardProps } from "./CardProps";
+import {
+  CardContentProps,
+  CardDescriptionProps,
+  CardFooterProps,
+  CardHeaderProps,
+  CardProps,
+  CardTitleProps,
+} from "./CardProps";
 
 export const cardVariants = cva(
-  "group mt-4 rounded-lg border border-transparent overflow-hidden bg-origin-border",
+  "rounded-lg border overflow-hidden bg-origin-border text-card-foreground shadow-sm",
   {
     variants: {
       borderColor: {
-        black: "bg-black",
+        black: "border-black",
+        white: "border-white",
+        primary: "border-primary",
+        secondary: "border-secondary",
+        tertiary: "border-tertiary",
+      },
+      backGroundColor: {
+        zinc: "bg-zinc-900",
         white: "bg-white",
         primary: "bg-primary",
         secondary: "bg-secondary",
         tertiary: "bg-tertiary",
         gradient: "bg-gradient-to-r from-brandred to-brandblue",
       },
-      ctaColor: {
-        gray: "text-gray-500",
+    },
+    defaultVariants: {
+      borderColor: "primary",
+      backGroundColor: "secondary",
+    },
+  }
+);
+
+export const cardTitleVariants = cva(
+  "inline-block text-2xl font-semibold leading-none tracking-tight",
+  {
+    variants: {
+      titleColor: {
         white: "text-white",
         black: "text-black",
         primary: "text-primary",
@@ -25,30 +50,14 @@ export const cardVariants = cva(
       },
     },
     defaultVariants: {
-      borderColor: "gradient",
-      ctaColor: "gray",
+      titleColor: "white",
     },
   }
 );
 
-export const cardBackGroundColorVariants = cva("p-4 h-full", {
+export const cardDescriptionVariants = cva("text-sm text-muted-foreground", {
   variants: {
-    backGroundColor: {
-      zinc: "bg-zinc-900",
-      white: "bg-white",
-      primary: "bg-primary",
-      secondary: "bg-secondary",
-      tertiary: "bg-tertiary",
-    },
-  },
-  defaultVariants: {
-    backGroundColor: "zinc",
-  },
-});
-
-export const cardTitleTextColorVariants = cva("inline-bloack text-xl", {
-  variants: {
-    titleColor: {
+    textColor: {
       white: "text-white",
       black: "text-black",
       primary: "text-primary",
@@ -57,39 +66,96 @@ export const cardTitleTextColorVariants = cva("inline-bloack text-xl", {
     },
   },
   defaultVariants: {
-    titleColor: "tertiary",
+    textColor: "white",
   },
 });
 
-export default forwardRef<HTMLAnchorElement, CardProps>(function Card(
-  {
-    className,
-    title,
-    cta,
-    href,
-    borderColor,
-    ctaColor,
-    backGroundColor,
-    titleColor,
-    ...props
+export const cardFooterVariants = cva("flex items-center p-6 pt-0", {
+  variants: {
+    textColor: {
+      gray: "text-gray-500",
+      white: "text-white",
+      black: "text-black",
+      primary: "text-primary",
+      secondary: "text-secondary",
+      tertiary: "text-tertiary",
+    },
   },
-  ref
-) {
-  return (
-    <a
-      className={cn(cardVariants({ borderColor, ctaColor }))}
-      target="_blank"
-      rel="noopener noreferrer"
-      href={href}
+  defaultVariants: {
+    textColor: "gray",
+  },
+});
+
+const Card = forwardRef<HTMLDivElement, CardProps>(
+  ({ className, borderColor, backGroundColor, ...props }, ref) => (
+    <div
       ref={ref}
+      className={cn(cardVariants({ borderColor, backGroundColor, className }))}
+      {...props}
+    />
+  )
+);
+
+const CardHeader = forwardRef<HTMLDivElement, CardHeaderProps>(
+  ({ className, ...props }, ref) => (
+    <div
+      ref={ref}
+      className={cn("flex flex-col space-y-1.5 p-6", className)}
+      {...props}
+    />
+  )
+);
+
+const CardTitle = forwardRef<HTMLParagraphElement, CardTitleProps>(
+  ({ className, titleColor, ...props }, ref) => (
+    <h3
+      ref={ref}
+      className={cn(cardTitleVariants({ titleColor, className }))}
+      {...props}
+    />
+  )
+);
+
+const CardDescription = forwardRef<HTMLParagraphElement, CardDescriptionProps>(
+  ({ className, textColor, ...props }, ref) => (
+    <p
+      ref={ref}
+      className={cn(cardDescriptionVariants({ textColor, className }))}
+      {...props}
+    />
+  )
+);
+
+const CardContent = forwardRef<HTMLDivElement, CardContentProps>(
+  ({ className, ...props }, ref) => (
+    <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
+  )
+);
+
+const CardFooter = forwardRef<HTMLDivElement, CardFooterProps>(
+  ({ className, children, href, textColor, ...props }, ref) => (
+    <div
+      ref={ref}
+      className={cn(cardFooterVariants({ textColor, className }))}
       {...props}
     >
-      <div className={cn(cardBackGroundColorVariants({ backGroundColor }))}>
-        <p className={cn(cardTitleTextColorVariants({ titleColor }))}>
-          {title}
-        </p>
-        <div className={cn("text-xs mt-4 group-hover:underline")}>{cta} →</div>
-      </div>
-    </a>
-  );
-});
+      {href ? <a href={href}>{children}</a> : children}
+    </div>
+  )
+);
+
+Card.displayName = "Card";
+CardHeader.displayName = "CardHeader";
+CardTitle.displayName = "CardTitle";
+CardDescription.displayName = "CardDescription";
+CardContent.displayName = "CardContent";
+CardFooter.displayName = "CardFooter";
+
+export {
+  Card,
+  CardHeader,
+  CardFooter,
+  CardTitle,
+  CardDescription,
+  CardContent,
+};

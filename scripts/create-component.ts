@@ -83,13 +83,15 @@ async function createComponent() {
   `;
 
   const specTemplate = `
-    import React from 'react';
-    import { render } from '@testing-library/react';
-    import ${ComponentName} from './${ComponentName}';
+    import { cleanup, render, screen } from "@testing-library/react";
+    import { afterEach, describe, expect, it } from "vitest";
+    import { ${ComponentName} } from ".";
 
     describe('${ComponentName}', () => {
       it('renders without error', () => {
         render(<${ComponentName} />);
+        const ${ComponentName}Element = screen.getByText("Hi");
+        expect(${ComponentName}Element).toBeDefined();
       });
     });
   `;
