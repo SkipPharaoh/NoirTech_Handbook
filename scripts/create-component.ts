@@ -121,7 +121,9 @@ async function createComponent() {
     import { PropData } from '../../../../../packages/@noirtribe-ui/src/lib/docs/utils';
     import { DocsComponentLayout } from "../../../../../packages/@noirtribe-ui/src/components/doc/DocsComponentLayout/index"
 
-    'type ${"ComponentName"}Props = ComponentProps<typeof ${"ComponentName"}>'
+    \`\`\`tsx
+    type ${ComponentName}Props = ComponentProps<typeof ${ComponentName}>
+    \`\`\`
 
     <div>
   <DocsComponentLayout propInfo={PropData}>

@@ -20,6 +20,7 @@
     "react": "^18.2.0"
   },
   "devDependencies": {
+    "@radix-ui/react-avatar": "1.0.3",
     "@types/react": "^18.2.5",
     "@testing-library/dom": "^9.3.0",
     "@testing-library/jest-dom": "^5.16.5",
