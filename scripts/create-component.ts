@@ -41,10 +41,6 @@ async function createComponent() {
     __dirname,
     `../packages/@noirtribe-ui/src/components/${targetFolder}/${ComponentName}`
   );
-  const mdxFolderPath = path.join(
-    __dirname,
-    "../apps/docs/src/pages/components"
-  );
 
   // Create the component folder if it doesn't exist
   if (!fs.existsSync(targetComponentPath)) {
@@ -113,30 +109,6 @@ async function createComponent() {
   //   specTemplate
   // );
 
-  // Generate the mdx file
-  const mdxTemplate = `
-    # ${ComponentName}
-
-    import { ${ComponentName} } from '@noirtribe/ui';
-    import { PropData } from '../../../../../packages/@noirtribe-ui/src/lib/docs/utils';
-    import { DocsComponentLayout } from "../../../../../packages/@noirtribe-ui/src/components/doc/DocsComponentLayout/index"
-
-    \`\`\`tsx
-    type ${ComponentName}Props = ComponentProps<typeof ${ComponentName}>
-    \`\`\`
-
-    <div>
-  <DocsComponentLayout propInfo={PropData}>
-    <${"ComponentName"} />
-  </DocsComponentLayout>
-</div>;
-  `;
-
-  fs.writeFileSync(
-    path.join(mdxFolderPath, `${ComponentName}.mdx`),
-    mdxTemplate
-  );
-
   // Update the index.tsx file in the @noirtribe-ui folder manually
   console.log(
     "\nTo complete the component creation, update the index.tsx file in the @noirtribe-ui folder."
@@ -146,6 +118,12 @@ async function createComponent() {
   );
   console.log(
     `export * from './components/${targetFolder}/${ComponentName}/index';`
+  );
+  console.log(
+    `\nFinally, run the following command "pnpm build" to build the component.`
+  );
+  console.log(
+    `Then run "pnpm create-mdx" to create the MDX file for the component.`
   );
 }
 
