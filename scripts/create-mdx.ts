@@ -27,9 +27,8 @@ async function createMDX() {
   const mdxTemplate = `
     # ${MDXName}
 
-    import { ${MDXName} } from '@noirtribe/ui';
+    import { ${MDXName}, DocsComponentLayout } from '@noirtribe/ui';
     import { PropData } from '../../../../../packages/@noirtribe-ui/src/lib/docs/utils';
-    import { DocsComponentLayout } from "../../../../../packages/@noirtribe-ui/src/components/doc/DocsComponentLayout/index"
 
     \`\`\`tsx
     type ${MDXName}Props = ComponentProps<typeof ${MDXName}>

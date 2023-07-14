@@ -4,8 +4,8 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "clean": "turbo clean",
-    "daemon-clean": "turbo daemon clean",
+    "clean": "turbo clean && rm -rf node_modules",
+    "daemon-clean": "turbo daemon clean && rm -rf node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "vitest": "cd packages/ui && pnpm test",
     "create-component": "tsx scripts/create-component.ts"

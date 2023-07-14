@@ -25,5 +25,6 @@ export interface CardContentProps
 
 export interface CardFooterProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    React.AnchorHTMLAttributes<HTMLAnchorElement>,
-    VariantProps<typeof cardFooterVariants> {}
+    VariantProps<typeof cardFooterVariants> {
+  href?: string;
+}
