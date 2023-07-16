@@ -8,7 +8,8 @@
     "daemon-clean": "turbo daemon clean && rm -rf node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "vitest": "cd packages/ui && pnpm test",
-    "create-component": "tsx scripts/create-component.ts"
+    "create-component": "tsx scripts/create-component.ts",
+    "create-mdx": "tsx scripts/create-mdx.ts"
   },
   "devDependencies": {
     "@types/inquirer": "^9.0.3",
