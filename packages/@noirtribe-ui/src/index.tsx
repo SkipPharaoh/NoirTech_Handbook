@@ -3,6 +3,7 @@ import "./styles.css";
 
 // Core components
 export * from "./components/core/AvatarCard/index";
+export * from "./components/core/Badge/index";
 export * from "./components/core/Button/index";
 export * from "./components/core/Card/index";
 
