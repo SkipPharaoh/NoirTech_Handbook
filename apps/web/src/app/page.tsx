@@ -1,23 +1,14 @@
+import {
+  Button,
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@noirtribe/ui";
 import { Metadata } from "next";
-import { Button, Card } from "../../../../packages/@noirtribe-ui/src/index";
-
-const CARD_CONTENT = [
-  {
-    title: "Caching Tasks",
-    href: "https://turbo.build/repo/docs/core-concepts/caching",
-    cta: "Read More",
-  },
-  {
-    title: "Running Tasks",
-    href: "https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks",
-    cta: "Read More",
-  },
-  {
-    title: "Configuration Options",
-    href: "https://turbo.build/repo/docs/reference/configuration",
-    cta: "Read More",
-  },
-];
+import { CardData } from "../../../../packages/@noirtribe-ui/src/lib/docs/utils";
 
 export const metadata: Metadata = {
   title: "Web - Turborepo Example",
@@ -40,14 +31,24 @@ export default function Home() {
         </div>
 
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 place-content-evenly">
-          {CARD_CONTENT.map((card) => (
+          {CardData.map((card) => (
             <Card
               key={card.title}
-              {...card}
-              backGroundColor="zinc"
-              titleColor="white"
-              ctaColor="primary"
-            />
+              backGroundColor={card.backGroundColor as any}
+            >
+              <CardHeader>
+                <CardTitle titleColor={card.titleColor as any}>
+                  {card.title}
+                </CardTitle>
+                <CardDescription>Card Description</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p>Card Content</p>
+              </CardContent>
+              <CardFooter href={card.href} className="hover:underline">
+                {card.cta}
+              </CardFooter>
+            </Card>
           ))}
         </div>
       </main>
