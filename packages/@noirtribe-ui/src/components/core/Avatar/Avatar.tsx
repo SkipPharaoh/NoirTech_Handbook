@@ -1,7 +1,7 @@
 "use client";
 
 import { Fallback, Image, Root } from "@radix-ui/react-avatar";
-import React, { ElementRef, forwardRef } from "react";
+import { ElementRef, forwardRef } from "react";
 import { cn } from "../../../lib/styling/utils";
 import {
   AvatarFallbackProps,

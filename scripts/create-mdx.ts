@@ -25,20 +25,28 @@ async function createMDX() {
 
   // Generate the mdx file
   const mdxTemplate = `
-    # ${MDXName}
+# ${MDXName}
 
-    import { ${MDXName}, DocsComponentLayout } from '@noirtribe/ui';
-    import { PropData } from '../../../../../packages/@noirtribe-ui/src/lib/docs/utils';
+import { ${MDXName}, DocsComponentLayout } from '@noirtribe/ui';
 
-    \`\`\`tsx
-    type ${MDXName}Props = ComponentProps<typeof ${MDXName}>
-    \`\`\`
+\`\`\`tsx
+type ${MDXName}Props = ComponentProps<typeof ${MDXName}>
+\`\`\`
 
-    <div className="pb-24">
-      <DocsComponentLayout propInfo={PropData}>
-        <${MDXName} />
-      </DocsComponentLayout>
-    </div>;
+<div className="pb-24">
+  <DocsComponentLayout
+    propInfo={[
+      {
+        name: "className",
+        type: "string",
+        defaultValue: "undefined",
+        description: "The CSS class name for styling the button.",
+      },
+    ]}
+  >
+    <${MDXName} />
+  </DocsComponentLayout>
+</div>
   `;
 
   fs.writeFileSync(path.join(mdxFolderPath, `${MDXName}.mdx`), mdxTemplate);
