@@ -4,12 +4,12 @@ import { type DocsThemeConfig } from "nextra-theme-docs";
 const config: DocsThemeConfig = {
   logo: <span>Noir Tribe Docs</span>,
   project: {
-    link: "https://github.com/shuding/nextra-docs-template",
+    link: "https://github.com/SkipPharaoh/NoirTech_Handbook",
   },
   chat: {
     link: "https://discord.com",
   },
-  docsRepositoryBase: "https://github.com/shuding/nextra-docs-template",
+  docsRepositoryBase: "https://github.com/SkipPharaoh/NoirTech_Handbook",
   footer: {
     text: "Noir Tribe Docs",
   },

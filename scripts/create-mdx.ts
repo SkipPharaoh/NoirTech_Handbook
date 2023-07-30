@@ -20,7 +20,7 @@ async function createMDX() {
 
   const mdxFolderPath = path.join(
     __dirname,
-    "../apps/docs/src/pages/components"
+    "../apps/docs/src/pages/docs/components"
   );
 
   // Generate the mdx file

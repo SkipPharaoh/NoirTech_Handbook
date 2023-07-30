@@ -1,7 +1,13 @@
 {
-  "index": "Introduction",
-  "standards": "Coding Standards",
-  "components": "Components",
+  "index": {
+    "type": "page",
+    "title": "NoirTribe UI Docs",
+    "display": "hidden"
+  },
+  "docs": {
+    "type": "page",
+    "title": "Documentation"
+  },
   "about": {
     "title": "About",
     "type": "page"

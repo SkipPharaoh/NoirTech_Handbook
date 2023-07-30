@@ -1,3 +1,5 @@
+import { icons } from "lucide-react";
+
 const PropData = [
   {
     name: "prop1",
@@ -70,4 +72,39 @@ const TableData = [
   },
 ];
 
-export { PropData, CardData, TableData };
+const HomepageData = [
+  {
+    icon: icons.UserCircle2,
+    title: "Accessible",
+    content: "Follows ARIA standards for accessible components out of the box.",
+  },
+  {
+    icon: icons.Layout,
+    title: "Flexible",
+    content: "Components adapt to different screen sizes and layout needs.",
+  },
+  {
+    icon: icons.Puzzle,
+    title: "Composability",
+    content:
+      "Components can be mixed, matched, and nested like building blocks to create versatile UI layouts.",
+  },
+  {
+    icon: icons.Settings,
+    title: "Customizable",
+    content: "Extensible design system enables theme and style overrides.",
+  },
+  {
+    icon: icons.Code2,
+    title: "Type-Safe",
+    content: "Strongly typed components help prevent bugs at build time",
+  },
+  {
+    icon: icons.RefreshCwOff,
+    title: "Dry-Code",
+    content:
+      "Simplify development with abstracted reusable hooks and components, which eliminates repetitive code.",
+  },
+];
+
+export { PropData, CardData, TableData, HomepageData };

@@ -1,11 +1,73 @@
-# Introduction
+import {
+  Button,
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@noirtribe/ui";
+import Link from "next/link";
+import { HomepageData } from "../../../../packages/@noirtribe-ui/src/lib/docs/utils";
 
-Welcome to Nextra! This is a basic docs template. You can use it as a starting point for your own project :)
+<section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
+  <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center">
+    <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
+      Noir Tribe Docs
+    </h1>
+    <h4 className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8 pt-10 text-slate-400">
+      Make beautiful websites with these reusable components
+    </h4>
+    <div className="space-x-4">
+      <Link href="/docs">
+        <Button variant="primary" size="sm">
+          Getting Started
+        </Button>
+      </Link>
+      <Link
+        target="_blank"
+        rel="noreferrer"
+        href="https://github.com/SkipPharaoh/NoirTech_Handbook"
+      >
+        <Button variant="outline" size="sm">
+          GitHub
+        </Button>
+      </Link>
+    </div>
+  </div>
+</section>
 
-## What is Nextra?
+<section className="container space-y-6 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24">
+  <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
+    <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl mb-6">
+      Features
+    </h2>
+  </div>
+  <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
+    {HomepageData.map((card) => (
+      <Card key={card.title} backGroundColor="zinc">
+        <CardHeader>
+          <CardTitle>
+            <card.icon />
+          </CardTitle>
+          <CardDescription className="text-xl font-semibold">
+            {card.title}
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <p>{card.content}</p>
+        </CardContent>
+      </Card>
+    ))}
+  </div>
+</section>
 
-A **simple**, **powerful** and **flexible** site generation framework with everything you love from Next.js.
+<div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
+  <h2 className="font-heading text-2xl leading-[1.1] sm:text-3xl md:text-6xl mb-6">
+    Build fast
+  </h2>
+</div>
 
-## Documentation
+**Build your apps using Noir Tribe Docs**
 
-The documentation is available at [https://nextra.site](https://nextra.site).
+_Built by the Noir Tribe team. The source code is available on [GitHub](https://github.com/SkipPharaoh/NoirTech_Handbook)._
