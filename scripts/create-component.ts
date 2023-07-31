@@ -49,47 +49,47 @@ async function createComponent() {
 
   // Generate the component files
   const componentTemplate = (componentName: string) => `
-    import { forwardRef } from 'react';
-    import { cn } from '../../../lib/styling/utils';
-    import { ${componentName}Props } from './${componentName}Props';
+import { forwardRef } from 'react';
+import { cn } from '../../../lib/styling/utils';
+import { ${componentName}Props } from './${componentName}Props';
 
-    export default forwardRef<HTMLDivElement, ${componentName}Props>(function ${componentName}(
-      { className, ...props },
-      ref
-    ) {
-      return (
-        <div className={cn( className )} ref={ref} {...props}>
-          Hi
-        </div>
-      );
-    });
+export default forwardRef<HTMLDivElement, ${componentName}Props>(function ${componentName}(
+  { className, ...props },
+  ref
+) {
+  return (
+    <div className={cn( className )} ref={ref} {...props}>
+      Hi
+    </div>
+  );
+});
   `;
 
   const indexTemplate = (componentName: string) => `
-    import ${componentName} from './${componentName}';
-    import * as ${componentName}Props from './${componentName}Props';
+import ${componentName} from './${componentName}';
+import * as ${componentName}Props from './${componentName}Props';
 
-    export { ${componentName}, ${componentName}Props };
+export { ${componentName}, ${componentName}Props };
   `;
 
   const propsTemplate = `
-    import React from 'react';
+import React from 'react';
 
-    export interface ${ComponentName}Props extends React.HTMLAttributes<HTMLDivElement> {}
+export interface ${ComponentName}Props extends React.HTMLAttributes<HTMLDivElement> {}
   `;
 
   const specTemplate = `
-    import { cleanup, render, screen } from "@testing-library/react";
-    import { afterEach, describe, expect, it } from "vitest";
-    import { ${ComponentName} } from ".";
+import { cleanup, render, screen } from "@testing-library/react";
+import { afterEach, describe, expect, it } from "vitest";
+import { ${ComponentName} } from ".";
 
-    describe('${ComponentName}', () => {
-      it('renders without error', () => {
-        render(<${ComponentName} />);
-        const ${ComponentName}Element = screen.getByText("Hi");
-        expect(${ComponentName}Element).toBeDefined();
-      });
-    });
+describe('${ComponentName}', () => {
+  it('renders without error', () => {
+    render(<${ComponentName} />);
+    const ${ComponentName}Element = screen.getByText("Hi");
+    expect(${ComponentName}Element).toBeDefined();
+  });
+});
   `;
 
   fs.writeFileSync(
