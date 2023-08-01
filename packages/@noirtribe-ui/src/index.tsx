@@ -3,6 +3,7 @@ import "./styles.css";
 
 // Core components
 export * from "./components/core/Accordion/index";
+export * from "./components/core/Alert/index";
 export * from "./components/core/Avatar/index";
 export * from "./components/core/AvatarCard/index";
 export * from "./components/core/Badge/index";
