@@ -10,6 +10,11 @@ const config: DocsThemeConfig = {
     link: "https://discord.com",
   },
   docsRepositoryBase: "https://github.com/SkipPharaoh/NoirTech_Handbook",
+  useNextSeoProps: function SEO() {
+    return {
+      titleTemplate: "%s - Noir Tribe Docs",
+    };
+  },
   footer: {
     text: "Noir Tribe Docs",
   },
