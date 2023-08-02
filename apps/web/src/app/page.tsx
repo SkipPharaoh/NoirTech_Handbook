@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Button,
   Card,
@@ -7,12 +9,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@noirtribe/ui";
-import { Metadata } from "next";
 import { CardData } from "../../../../packages/@noirtribe-ui/src/lib/docs/utils";
+import { getMetadata } from "../metadata";
 
-export const metadata: Metadata = {
-  title: "Web - Turborepo Example",
-};
+getMetadata();
 
 export default function Home() {
   return (
