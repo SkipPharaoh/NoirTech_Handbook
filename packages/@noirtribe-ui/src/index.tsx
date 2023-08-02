@@ -9,6 +9,7 @@ export * from "./components/core/Avatar/index";
 export * from "./components/core/AvatarCard/index";
 export * from "./components/core/Badge/index";
 export * from "./components/core/Button/index";
+export * from "./components/core/Calendar/index";
 export * from "./components/core/Card/index";
 
 // Doc components

@@ -1,0 +1,22 @@
+# Calendar
+
+import { Calendar, DocsComponentLayout } from "@noirtribe/ui";
+
+```tsx
+type CalendarProps = ComponentProps<typeof Calendar>;
+```
+
+<div className="pb-24">
+  <DocsComponentLayout
+    propInfo={[
+      {
+        name: "className",
+        type: "string",
+        defaultValue: "undefined",
+        description: "The CSS class name for styling the button.",
+      },
+    ]}
+  >
+    <Calendar mode="single" className="rounded-md border" />
+  </DocsComponentLayout>
+</div>
