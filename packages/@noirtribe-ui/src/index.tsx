@@ -14,6 +14,7 @@ export * from "./components/core/Checkbox/index";
 export * from "./components/core/Collapsible/index";
 export * from "./components/core/Command/index";
 export * from "./components/core/Dialog/index";
+export * from "./components/core/Input/index";
 
 // Doc components
 export * from "./components/doc/DisplayComponent/index";

@@ -1,0 +1,68 @@
+# Input
+
+import { Input, DocsComponentLayout } from "@noirtribe/ui";
+
+```tsx
+type InputProps = ComponentProps<typeof Input>;
+```
+
+<div className="pb-24 h-full">
+  <DocsComponentLayout
+    className="h-screen mb-40"
+    propInfo={[
+      {
+        name: "className",
+        type: "string",
+        defaultValue: "undefined",
+        description: "The CSS class name for styling the button.",
+      },
+      {
+        name: "value",
+        type: "string",
+        defaultValue: "''",
+        description: "The current value of the input.",
+      },
+      {
+        name: "onChange",
+        type: "(event: React.ChangeEvent<HTMLInputElement>) => void",
+        defaultValue: "undefined",
+        description: "A callback function to handle input value changes.",
+      },
+      {
+        name: "placeholder",
+        type: "string",
+        defaultValue: "undefined",
+        description: "A short hint that describes the expected input.",
+      },
+      {
+        name: "disabled",
+        type: "boolean",
+        defaultValue: "false",
+        description:
+          "If true, the input will be disabled and cannot be interacted with.",
+      },
+      {
+        name: "required",
+        type: "boolean",
+        defaultValue: "false",
+        description:
+          "If true, the input must be filled out before submitting a form.",
+      },
+      {
+        name: "maxLength",
+        type: "number",
+        defaultValue: "undefined",
+        description: "The maximum number of characters allowed in the input.",
+      },
+      {
+        name: "type",
+        type: "'text' | 'password' | 'email' | 'number' | 'tel' | 'url'",
+        defaultValue: "'text'",
+        description:
+          "The type of input to render (e.g., text, password, email, etc.).",
+      },
+    ]}
+  >
+    <Input type="email" placeholder="Email" />
+  </DocsComponentLayout>
+</div>
