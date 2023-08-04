@@ -11,6 +11,7 @@ export * from "./components/core/Button/index";
 export * from "./components/core/Calendar/index";
 export * from "./components/core/Card/index";
 export * from "./components/core/Checkbox/index";
+export * from "./components/core/Collapsible/index";
 
 // Doc components
 export * from "./components/doc/DisplayComponent/index";

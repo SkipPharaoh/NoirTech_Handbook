@@ -1,0 +1,33 @@
+# Collapsible
+
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+  DocsComponentLayout,
+} from "@noirtribe/ui";
+
+```tsx
+type CollapsibleProps = ComponentProps<typeof Collapsible>;
+```
+
+<div className="pb-24">
+  <DocsComponentLayout
+    propInfo={[
+      {
+        name: "className",
+        type: "string",
+        defaultValue: "undefined",
+        description: "The CSS class name for styling the button.",
+      },
+    ]}
+  >
+    <Collapsible>
+      <CollapsibleTrigger>Can I use this in my project?</CollapsibleTrigger>
+      <CollapsibleContent>
+        Yes. Free to use for personal and commercial projects. No attribution
+        required.
+      </CollapsibleContent>
+    </Collapsible>
+  </DocsComponentLayout>
+</div>
