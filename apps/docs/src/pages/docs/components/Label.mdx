@@ -1,0 +1,47 @@
+# Label
+
+import { Checkbox, Label, DocsComponentLayout } from "@noirtribe/ui";
+
+```tsx
+type LabelProps = ComponentProps<typeof Label>;
+```
+
+<div className="pb-24">
+  <DocsComponentLayout
+    propInfo={[
+      {
+    name: "className",
+    type: "string",
+    defaultValue: "undefined",
+    description: "The CSS class name for styling the button.",
+  },
+  {
+    name: "htmlFor",
+    type: "string",
+    defaultValue: "undefined",
+    description: "The ID of the input element this label is associated with.",
+  },
+  {
+    name: "required",
+    type: "boolean",
+    defaultValue: "false",
+    description: "If true, the input element this label is associated with is required.",
+  },
+  {
+    name: "children",
+    type: "ReactNode",
+    defaultValue: "undefined",
+    description: "The content to be displayed inside the label component.",
+  },
+    ]}
+  >
+    <div>
+      <div className="flex items-center space-x-2">
+        <Checkbox id="terms" />
+        <Label htmlFor="terms">Accept terms and conditions</Label>
+      </div>
+      <Label htmlFor="email">Your email address</Label>
+    </div>
+
+  </DocsComponentLayout>
+</div>
