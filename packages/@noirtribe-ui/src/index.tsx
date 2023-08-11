@@ -15,6 +15,7 @@ export * from "./components/core/Collapsible/index";
 export * from "./components/core/Command/index";
 export * from "./components/core/ContextMenu/index";
 export * from "./components/core/Dialog/index";
+export * from "./components/core/DropdownMenu/index";
 export * from "./components/core/Input/index";
 export * from "./components/core/Label/index";
 export * from "./components/core/Popover/index";
