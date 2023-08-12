@@ -20,6 +20,7 @@ export * from "./components/core/HoverCard/index";
 export * from "./components/core/Input/index";
 export * from "./components/core/Label/index";
 export * from "./components/core/Menubar/index";
+export * from "./components/core/NavigationMenu/index";
 export * from "./components/core/Popover/index";
 
 // Doc components
