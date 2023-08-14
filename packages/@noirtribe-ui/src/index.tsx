@@ -22,6 +22,7 @@ export * from "./components/core/Label/index";
 export * from "./components/core/Menubar/index";
 export * from "./components/core/NavigationMenu/index";
 export * from "./components/core/Popover/index";
+export * from "./components/core/Progress/index";
 
 // Doc components
 export * from "./components/doc/DisplayComponent/index";

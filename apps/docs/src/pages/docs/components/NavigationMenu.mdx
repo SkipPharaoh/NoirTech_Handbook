@@ -16,10 +16,8 @@ import {
   NavigationMenuViewport,
   DocsComponentLayout,
 } from "@noirtribe/ui";
-import {
-  components,
-  ListItem,
-} from "../../../../../../packages/@noirtribe-ui/src/lib/docs/utils";
+import { Components } from "../../../../../../packages/@noirtribe-ui/src/lib/docs/utils";
+import { ListItem } from "../../../../../../packages/@noirtribe-ui/src/lib/list/utils";
 import Link from "next/link";
 
 ```tsx
@@ -74,7 +72,7 @@ type NavigationMenuProps = ComponentProps<typeof NavigationMenu>;
           <NavigationMenuTrigger>Components</NavigationMenuTrigger>
           <NavigationMenuContent className="bg-secondary">
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {components.map((component) => (
+              {Components.map((component) => (
                 <ListItem
                   key={component.title}
                   title={component.title}
