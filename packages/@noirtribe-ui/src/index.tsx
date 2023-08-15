@@ -28,6 +28,7 @@ export * from "./components/core/ScrollArea/index";
 export * from "./components/core/Select/index";
 export * from "./components/core/Separator/index";
 export * from "./components/core/Sheet/index";
+export * from "./components/core/Skeleton/index";
 
 // Doc components
 export * from "./components/doc/DisplayComponent/index";
