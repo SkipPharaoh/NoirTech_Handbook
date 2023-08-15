@@ -1,0 +1,51 @@
+# Separator
+
+import { Separator, DocsComponentLayout } from "@noirtribe/ui";
+
+```tsx
+type SeparatorProps = ComponentProps<typeof Separator>;
+```
+
+<div className="pb-24">
+  <DocsComponentLayout
+    propInfo={[
+      {
+        name: "className",
+        type: "string",
+        defaultValue: "undefined",
+        description: "The CSS class name for styling the button.",
+      },
+      {
+        name: "orientation",
+        type: "'horizontal' | 'vertical'",
+        defaultValue: "'horizontal'",
+        description:
+          "The orientation of the separator. Can be 'horizontal' or 'vertical'.",
+      },
+      {
+        name: "decorative",
+        type: "boolean",
+        defaultValue: "true",
+        description:
+          "Specifies whether the separator is purely decorative for accessibility purposes.",
+      },
+    ]}
+  >
+    <div>
+      <div className="space-y-1">
+        <h4 className="text-sm font-medium leading-none">Noir Tribe Docs</h4>
+        <h4 className="text-sm text-tertiary text-muted-foreground">
+          An UI component library.
+        </h4>
+      </div>
+      <Separator className="my-4 bg-secondary" />
+      <div className="flex h-5 items-center space-x-4 text-sm">
+        <div>Blog</div>
+        <Separator orientation="vertical" className="bg-secondary" />
+        <div>Docs</div>
+        <Separator orientation="vertical" className="bg-secondary" />
+        <div>Source</div>
+      </div>
+    </div>
+  </DocsComponentLayout>
+</div>
