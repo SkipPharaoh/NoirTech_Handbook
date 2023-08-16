@@ -1,0 +1,44 @@
+# Toast
+
+import { Button, ToastAction, DocsComponentLayout } from "@noirtribe/ui";
+import { useToast } from "../../../../../../packages/@noirtribe-ui/src/hooks/useToast/useToast.tsx";
+
+** Need to finish this page & add a Toaster demo **
+
+```tsx
+type ToastProps = ComponentProps<typeof Toast>;
+```
+
+export function ToastDemo() {
+  const { toast } = useToast();
+
+return (
+
+<Button
+  variant="outline"
+  onClick={() => {
+    toast({
+      title: "Scheduled: Catch up ",
+      description: "Friday, February 10, 2023 at 5:57 PM",
+      action: <ToastAction altText="Goto schedule to undo">Undo</ToastAction>,
+    });
+  }}
+>
+  Add to calendar
+</Button>
+); }
+
+<div className="pb-24">
+  <DocsComponentLayout
+    propInfo={[
+      {
+        name: "className",
+        type: "string",
+        defaultValue: "undefined",
+        description: "The CSS class name for styling the button.",
+      },
+    ]}
+  >
+    <ToastDemo />
+  </DocsComponentLayout>
+</div>
