@@ -31,6 +31,7 @@ export * from "./components/core/Sheet/index";
 export * from "./components/core/Skeleton/index";
 export * from "./components/core/Slider/index";
 export * from "./components/core/Switch/index";
+export * from "./components/core/Tabs/index";
 
 // Doc components
 export * from "./components/doc/DisplayComponent/index";
