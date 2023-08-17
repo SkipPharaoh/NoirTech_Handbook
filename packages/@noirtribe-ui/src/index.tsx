@@ -36,6 +36,7 @@ export * from "./components/core/TextArea/index";
 export * from "./components/core/Toast/index";
 export * from "./components/core/Toaster/index";
 export * from "./components/core/Toggle/index";
+export * from "./components/core/Tooltip/index";
 
 // Doc components
 export * from "./components/doc/DisplayComponent/index";
