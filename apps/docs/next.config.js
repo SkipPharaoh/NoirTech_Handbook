@@ -1,6 +1,16 @@
 const basicNextJSConfig = {
   reactStrictMode: true,
   transpilePackages: ["ui", "@noirtribe/ui"],
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        port: "",
+        pathname: "/**",
+      },
+    ],
+  },
 };
 
 const withNextra = require("nextra")({
