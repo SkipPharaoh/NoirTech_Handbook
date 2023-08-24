@@ -1,3 +1,45 @@
+import { Steps } from "nextra-theme-docs";
+
 # Installation
 
-For installation, include details on required dependencies, adding the package to a project, importing components, etc.
+How to install dependencies and structure your app.
+
+## TypeScript
+
+This project and the components are written in TypeScript. We recommend using TypeScript for your project as well.
+
+## React
+
+This project is built with [React](https://react.dev/). You can use it with any React project.
+
+<Steps>
+
+### Create project
+
+Ensure you have a React project set up and ready to go. If you don't, you can follow the installation instructions [here](https://react.dev/learn/installation).
+
+### Run the CLI
+
+Run the `@noirtribe/ui` command to add the UI components to your project:
+
+```bash copy
+pnpm add @noirtribe/ui
+```
+
+### That's it
+
+You can now start adding components to your project.
+
+```tsx {1,6} showLineNumbers copy
+import { Button } from "@noirtribe/ui";
+
+export default function Home() {
+  return (
+    <div>
+      <Button>Click me</Button>
+    </div>
+  );
+}
+```
+
+</Steps>
